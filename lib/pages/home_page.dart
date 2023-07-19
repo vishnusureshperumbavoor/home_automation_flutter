@@ -61,27 +61,27 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
               
-              // const SizedBox(height: 20)
+              const SizedBox(height: 20),
               // smart devices + grid
-              // Padding(
-              //   padding: EdgeInsets.symmetric(horizontal: horizontalPadding),
-              //   child: const Text("Smart Devices Grid"),
-              // ),
-              // Expanded(
-              //   child: GridView.builder(
-              //     itemCount: mySmartDevices.length,
-              //     gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
-              //       maxCrossAxisExtent: 2,
-              //     ),
-              //     itemBuilder: (context, index) {
-              //       return SmartDeviceBox(
-              //         smartDeviceName: mySmartDevices[index][0],
-              //         iconPath: mySmartDevices[index][1],
-              //         powerOn: mySmartDevices[index][2],
-              //       );
-              //     },
-              //   ),
-              // )
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: horizontalPadding),
+                child: const Text("Smart Devices Grid"),
+              ),
+              Expanded(
+                child: GridView.builder(
+                  itemCount: mySmartDevices.length,
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2,
+                  ),
+                  itemBuilder: (context, index) {
+                    return SmartDeviceBox(
+                      smartDeviceName: mySmartDevices[index][0],
+                      iconPath: mySmartDevices[index][1],
+                      powerOn: mySmartDevices[index][2],
+                    );
+                  },
+                ),
+              )
             ],
           ),
         ));
