@@ -3,7 +3,6 @@ import 'dart:math';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-
 class SmartDeviceBox extends StatelessWidget {
   final String smartDeviceName;
   final String iconPath;
@@ -24,7 +23,7 @@ class SmartDeviceBox extends StatelessWidget {
       padding: const EdgeInsets.all(15.0),
       child: Container(
         decoration: BoxDecoration(
-          color: Colors.grey[200],
+          color: powerOn ? Colors.grey[900] : Colors.grey[200],
           borderRadius: BorderRadius.circular(24),
         ),
         padding: const EdgeInsets.symmetric(vertical: 25),
@@ -35,6 +34,7 @@ class SmartDeviceBox extends StatelessWidget {
             Image.asset(
               iconPath,
               height: 65,
+              color: powerOn ? Colors.white : Colors.black,
             ),
             Row(
               children: [
@@ -43,9 +43,10 @@ class SmartDeviceBox extends StatelessWidget {
                     padding: const EdgeInsets.only(left: 25.0),
                     child: Text(
                       smartDeviceName,
-                      style: const TextStyle(
+                      style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 20,
+                        color: powerOn ? Colors.white : Colors.black,
                       ),
                     ),
                   ),
